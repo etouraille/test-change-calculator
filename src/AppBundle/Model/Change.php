@@ -25,4 +25,19 @@ class Change
      * @var int
      */
     public $coin1 = 0;
+
+    const params = [
+      'bill10' => 10,
+      'bill5'  => 5,
+      'coin2'  => 2,
+      'coin1'  => 1,
+    ];
+
+    public function getAmount() {
+      $ret = 0;
+      foreach( self::params as $key => $value ) {
+        $ret+= $this->$key * $value;
+      }
+      return $ret;
+    }
 }
